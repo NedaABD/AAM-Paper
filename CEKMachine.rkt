@@ -21,6 +21,12 @@
 
 (define (empty-map)
   (lambda (x) (error "no value")))
+
+;;Error Handling: Returning an error when a symbol is queried in the empty environment serves as a form of error handling. 
+;;It ensures that if a symbol is not found in the environment (which should not happen in normal circumstances),
+;;an error will be raised, indicating that the value associated with the symbol is not found. This helps in debugging and identifying potential issues in the evaluation process.
+
+
 (define (ext-map map x v)
   (lambda (y) (if (equal? x y)
                   v
